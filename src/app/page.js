@@ -56,7 +56,7 @@ export default function Home() {
   if (error) return <div className="min-h-screen flex items-center justify-center text-red-500">Error: {error}</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50 w-[60%] m-auto bg-white">
+    <div className="min-h-screen bg-gray-50 sm:w-[60%] m-auto bg-white">
       <Head>
         <title>Quick Commerce</title>
         <meta name="description" content="Quick commerce platform" />
@@ -98,10 +98,10 @@ export default function Home() {
         </div>
 
         {/* Service Icons */}
-        <div className="mb-8 grid grid-cols-7 gap-8 cursor-pointer">
+        <div className="mb-8 flex sm:grid sm:grid-cols-7 gap-8 cursor-pointer overflow-x-auto scrollbar-hide">
           {data.eta.map((service, index) => (
             <a href={service.url}>
-            <div key={index} className="flex flex-col items-center bg-blue-50 gap-[6px] rounded-[8px] shadow-lg">
+            <div key={index} className="flex flex-col items-center bg-blue-50 gap-[6px] w-[80px] rounded-[8px] shadow-lg">
               <span className="text-sm font-medium">{service.eta || 'N/A'}</span>
               <div className="flex items-center justify-center">
                 <img 
@@ -118,7 +118,7 @@ export default function Home() {
         {/* Trending Items */}
         <div className="mb-8">
           <h2 className="text-lg font-semibold mb-4">Trending Items</h2>
-          <div className="grid grid-cols-7 gap-8">
+          <div className="grid sm:grid-cols-7 grid-cols-4 gap-8">
             {data.trendingItems.map((item, index) => (
               <div key={index} className="flex flex-col items-center">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-2 overflow-hidden">
